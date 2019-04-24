@@ -1,0 +1,29 @@
+// https://leetcode.com/problems/container-with-most-water
+// Суть в том, что нам нужно найти такую пару чисел, разница между которыми будет минимальна, а расстояние в массиве - максимально.
+// Делим массив на две части и будем сравнивать попарно эти значения.
+// Если левое число больше правого, то сдвигаем правое в поисках большего, если нет - левое.
+
+class Solution {
+    public int maxArea(int[] height) {
+        int max = 0;
+
+        if(height.length<2) return max;
+
+        int start = 0;
+        int end = height.length-1;
+
+        while(start<end){
+            int sq = Math.min(height[start],height[end]) * (end-start);
+            max = Math.max(sq, max);
+
+            if(height[start]>height[end]){
+                end--;
+            }
+            else{
+                start++;
+            }
+        }
+
+        return max;
+    }
+}
