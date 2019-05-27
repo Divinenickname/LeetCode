@@ -2,7 +2,6 @@ class Solution {
     public String shortestPalindrome(String s){
        int n = s.length();
         String rev = new StringBuilder(s).reverse().toString();
-        int j = 0;
 
         for (int i = 0; i < n; i++) {
             if(s.substring(0, n-i).equals(rev.substring(i))){
