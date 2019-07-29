@@ -6,12 +6,12 @@ class Solution {
         while(mem!=0){
             if(l>=0){
                digits[l] += mem;
-                mem--;
+
 
                 if(digits[l]==10){
                     digits[l]=0;
-                    mem++;
-                }
+                }else mem--;
+                
                 l--; 
             }
             else{
